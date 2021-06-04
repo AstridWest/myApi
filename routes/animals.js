@@ -6,7 +6,7 @@ const auth = require("../auth-middleware");
 // get all animals
 
 //localhost:4000/api/v1/animals?offset=5&limit=5
-router.get("/animals", auth, async function(request, response, next){
+router.get("/animals", async function(request, response, next){
 
     let limit = parseInt(request.query.limit) || 5;
     let offset = parseInt(request.query.offset) || 0;
