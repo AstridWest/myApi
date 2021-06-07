@@ -13,7 +13,7 @@ const app = express();
 //import db-database
 require("./database");
 
-app.use("/", express.static('docs'))
+app.use("/", express.static('docs'));
 
 //allows request from other origins
 app.use(cors())
