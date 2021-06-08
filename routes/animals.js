@@ -62,7 +62,7 @@ router.get("/animals/:animalId", async function(request, response, next){
 })
 
 
-router.post("/animals", auth, function(request, response, next){
+router.post("/animals", function(request, response, next){
 
     try {
         let animal = new Animal({
@@ -84,7 +84,7 @@ router.post("/animals", auth, function(request, response, next){
 
 })
 
-router.patch("/animals/:animalId", auth, async function(request, response, next){
+router.patch("/animals/:animalId", async function(request, response, next){
 
     let { type, breed, name, age, sex, colors } = request.fields;
     let updateObject = {};
@@ -103,7 +103,7 @@ router.patch("/animals/:animalId", auth, async function(request, response, next)
 
 })
 
-router.delete("/animals/:animalId", auth, async function(request, response, next){
+router.delete("/animals/:animalId", async function(request, response, next){
 
     try {
         await Animal.findByIdAndDelete(request.params.animalId)
